@@ -1,5 +1,13 @@
 {
   "name": "js-cli-prototype",
-  "packageManager": "yarn@4.1.0",
-  "private": true
+  "packageManager": "npm@10.4.0",
+  "engineStrict": true,
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Fake passing test\"",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "MIT"
 }
