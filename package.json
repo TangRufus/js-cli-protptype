@@ -1,6 +1,6 @@
 {
   "name": "js-cli-prototype",
-  "packageManager": "npm@10.4.0",
+  "packageManager": "npm@10.1.0",
   "engineStrict": true,
   "version": "0.0.1",
   "description": "",
