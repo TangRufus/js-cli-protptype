@@ -1,5 +1,5 @@
 # TODO: Can we read version from .tool-versions?
-FROM node:20.11.1 AS build-env
+FROM node:20 AS build-env
 ADD . /app
 WORKDIR /app
 RUN npm ci --omit=dev
