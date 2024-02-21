@@ -16,8 +16,11 @@ jobs:
     permissions:
       contents: read
       packages: write
+      id-token: write
     steps:
       - uses: actions/checkout@v4
+
+      # Build and push the image to GitHub Packages Container registry
       - uses: docker/metadata-action@v5
         id: meta
         with:
@@ -34,7 +37,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-
+      
+      # Sign the image
       - uses: sigstore/cosign-installer@v3
       - run: cosign version
       - run: cosign sign --yes "ghcr.io/${{ env.REPO }}@${{ env.DIGEST }}"
