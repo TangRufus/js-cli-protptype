@@ -1,17 +1,13 @@
-function flag(name, defaultValue) {
-    const index = process.argv.indexOf(`--${name}`)
-    let value
-    if (index > -1) {
-        value = process.argv[index + 1]
-    }
-    return (value || defaultValue);
+function env(name, defaultValue) {
+    return process.env[name] || defaultValue
 }
 
 console.debug('starting')
+console.error('this line goes to stderr')
 
-const workspace = Number(flag('workspace', '123456789'))
-const since = flag('since', '2024-01-01')
-const until = flag('until', '2024-12-31')
+const workspace = Number(env('WORKSPACE', '123456789'))
+const since = env('SINCE', '2024-01-01')
+const until = env('UNTIL', '2024-12-31')
 
 console.debug('since:', since)
 console.debug('until:', until)
