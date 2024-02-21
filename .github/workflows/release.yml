@@ -8,6 +8,7 @@ on:
 jobs:
   test:
     uses: ./.github/workflows/test.yml
+
   docker:
     runs-on: ubuntu-latest
     needs: test
