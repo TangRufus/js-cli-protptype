@@ -18,5 +18,9 @@ jobs:
         with:
           node-version-file: '.tool-versions'
           cache: 'npm'
+      - run: corepack enable
+      - run: corepack install
+      - run: node -v
+      - run: npm -v
       - run: npm ci
       - run: npm test
