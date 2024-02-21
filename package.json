@@ -1,4 +1,5 @@
 {
   "name": "js-cli-prototype",
-  "packageManager": "yarn@4.1.0"
+  "packageManager": "yarn@4.1.0",
+  "private": true
 }
