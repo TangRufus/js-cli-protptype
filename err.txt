@@ -1,2 +1,0 @@
-this line goes to stderr
---workspace is not an integer
