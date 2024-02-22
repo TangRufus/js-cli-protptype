@@ -75,7 +75,7 @@ workspace is an odd number
 
 ### Remote
 
-Build, push and signed via GitHub Action. See [./github/release.yml](./github/release.yml).
+Build, push and signed via GitHub Action. See [.github/workflows/release.yml](.github/workflows/release.yml).
 
 ```console
 # Verify the container
