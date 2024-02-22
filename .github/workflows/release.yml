@@ -41,7 +41,7 @@ jobs:
       # Sign the image
       - uses: sigstore/cosign-installer@v3
       - run: cosign version
-      - run: cosign sign --yes --rekor-url "https://rekor.sigstore.dev/" "ghcr.io/${{ env.REPO }}@${{ env.DIGEST }}"
+      - run: cosign sign --yes "ghcr.io/${{ env.REPO }}@${{ env.DIGEST }}"
         env:
           REPO: ${{ github.repository }}
           DIGEST: ${{ steps.build-and-push.outputs.digest }}
