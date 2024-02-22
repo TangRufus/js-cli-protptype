@@ -78,7 +78,10 @@ workspace is an odd number
 Build, push and signed via GitHub Action. See [.github/workflows/release.yml](.github/workflows/release.yml).
 
 ```console
-# Verify the container
+# Pull latest image
+$ docker pull ghcr.io/tangrufus/js-cli-protptype:latest
+
+# Verify the image
 $ docker run --rm -it gcr.io/projectsigstore/cosign verify \
 --certificate-identity-regexp='https://github.com/tangrufus/js-cli-protptype/.github/workflows/.*@refs/.*' \
 --certificate-oidc-issuer='https://token.actions.githubusercontent.com' \
@@ -90,14 +93,14 @@ The following checks were performed on each of these signatures:
   - The cosign claims were validated
   - Existence of the claims in the transparency log was verified offline
   - The code-signing certificate was verified using trusted certificate authority certificates
-Certificate subject: https://github.com/tangrufus/js-cli-protptype/.github/workflows/release.yml@refs/tags/0.0.14
+Certificate subject: https://github.com/tangrufus/js-cli-protptype/.github/workflows/release.yml@refs/tags/0.0.16
 Certificate issuer URL: https://token.actions.githubusercontent.com
 GitHub Workflow Trigger: push
-GitHub Workflow SHA: 79a2ba03ad1b5a470303921545146d5ebfa76c0c
+GitHub Workflow SHA: bb8b7d9706386b48a82b9dd52960767f8d3537ef
 GitHub Workflow Name: Release
 GitHub Workflow Repository: tangrufus/js-cli-protptype
-GitHub Workflow Ref: refs/tags/0.0.14
-{"critical":{"identity":{"docker-reference":"ghcr.io/tangrufus/js-cli-protptype"},"image":{"docker-manifest-digest":"sha256:fdb5296c7aedb77672d4a4e9ab74b11253f73e7a68d792528ac0ae19356ae313"},"type":"cosign container image signature"},"optional":null}
+GitHub Workflow Ref: refs/tags/0.0.16
+{"critical":{"identity":{"docker-reference":"ghcr.io/tangrufus/js-cli-protptype"},"image":{"docker-manifest-digest":"sha256:3d372d3ad61ef89319f2872b2a19675f2f436c78850749e6dce772bff18f179c"},"type":"cosign container image signature"},"optional":null}
 
 # Run from docker
 $ docker run --rm -e WORKSPACE=123 -e SINCE=1999-12-31 ghcr.io/tangrufus/js-cli-protptype:latest
